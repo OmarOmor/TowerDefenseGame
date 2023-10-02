@@ -28,18 +28,32 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        if(GameMode.DefaultPawn == null)
+        SpawnPawn();
+    }
+
+
+    void SpawnPawn()
+    {
+        if (GameMode.DefaultPawn == null)
         {
             Debug.LogError("No pawn found in game mode scriptable.Spawning Default Camera to spawn point");
 
-            Camera cam =  new GameObject("Camera").AddComponent<Camera>();
+            Camera cam = new GameObject("Camera").AddComponent<Camera>();
 
             Utils.SetCurrentTransform(cam.transform, defaultSpawnPoint.transform);
-        }else
+        }
+        else
         {
             Pawn pawn = Instantiate(GameMode.DefaultPawn) as Pawn;
             pawn.name = "Player";
-            Utils.SetCurrentTransform(pawn.transform, defaultSpawnPoint.transform);
+            if(defaultSpawnPoint == null)
+            {
+                Debug.LogError("No default spawn point found.Please add a spawn point prefab in your scene!");
+            }else
+            {
+                Utils.SetCurrentTransform(pawn.transform, defaultSpawnPoint.transform);
+            }
+            
         }
     }
 }
