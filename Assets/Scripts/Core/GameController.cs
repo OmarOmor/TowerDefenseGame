@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public GameModeBase GameMode;
 
     SpawnPoint defaultSpawnPoint;
+    
 
     public static GameController Instance;
 
@@ -65,8 +66,9 @@ public class GameController : MonoBehaviour
             Debug.LogWarning("No HUD was assigned for " + GameMode.name);
         }else
         {
-            HUD hud = Instantiate(GameMode.DefaultHUD) as HUD;
+            var hud = Instantiate(GameMode.DefaultHUD) as TD_HUD;
             hud.name = "Tower Defense HUD";
+            
 
         }
     }
