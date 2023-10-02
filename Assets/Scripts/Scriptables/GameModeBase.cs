@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="GameMode base", menuName ="Gamemode")]
+[CreateAssetMenu(fileName = "GameMode base", menuName = "Gamemode")]
 public class GameModeBase : ScriptableObject
 {
     public Pawn DefaultPawn;
+    public HUD DefaultHUD;
+
 }

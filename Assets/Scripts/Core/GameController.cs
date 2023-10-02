@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         SpawnPawn();
+        SpawnHUD();
     }
 
 
@@ -54,6 +55,19 @@ public class GameController : MonoBehaviour
                 Utils.SetCurrentTransform(pawn.transform, defaultSpawnPoint.transform);
             }
             
+        }
+    }
+
+    void SpawnHUD()
+    {
+        if(GameMode.DefaultHUD == null)
+        {
+            Debug.LogWarning("No HUD was assigned for " + GameMode.name);
+        }else
+        {
+            HUD hud = Instantiate(GameMode.DefaultHUD) as HUD;
+            hud.name = "Tower Defense HUD";
+
         }
     }
 }
