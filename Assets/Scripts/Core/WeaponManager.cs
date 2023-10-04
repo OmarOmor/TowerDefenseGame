@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    public List<WeaponBase> Weapons;
+    public List<WeaponDescriptor> WeaponList;
+
+    public WeaponBase CurrentSelectedWeapon;
 }

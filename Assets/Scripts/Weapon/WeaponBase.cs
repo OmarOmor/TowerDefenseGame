@@ -24,6 +24,7 @@ public abstract class WeaponBase : MonoBehaviour
     [field: SerializeField]
     public Transform CurrentTarget { get; set; }
 
+    public ParticleSystem FireParticle;
 
 
     private void Awake()

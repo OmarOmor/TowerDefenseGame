@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     Transform chaseTargetTransform;
     public float ProjectileSpeed = 20;
+    public int Damage = 20;
 
 
     private void Update()
@@ -19,7 +20,15 @@ public class Projectile : MonoBehaviour
 
             if(direction.magnitude <=  dist)
             {
-                Destroy(chaseTargetTransform.gameObject);
+                Enemy  enemy  = chaseTargetTransform.GetComponent<Enemy>();
+                if(enemy.GetHealth() > 0 )
+                {
+                    enemy.SetHealth(Damage);
+                }else
+                {
+                    Destroy(enemy.gameObject);
+                }
+                
                 Destroy(gameObject);
             }
 
