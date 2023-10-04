@@ -2,20 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
+using DG.Tweening;
 
 public class MachineGun : WeaponBase
 {
-    public override void AimAtTarget()
-    {
-        Quaternion lookRotation = Quaternion.LookRotation(target.position - transform.position);
 
-        WeaponRotator.transform.localRotation = Quaternion.Slerp(WeaponRotator.transform.localRotation,lookRotation,5f * Time.deltaTime);
-    }
-
+    
     public override void FireProjectile()
     {
-       
+       if(CurrentTarget != null)
+        {
+            if(fireRate >= WeaponDescriptor.FireRate)
+            {
+                Debug.Log("Bang! bang!");
+                fireRate = 0;
+            }
+
+
+            fireRate += Time.deltaTime * WeaponDescriptor.FireRate;
+            fireRate = Mathf.Clamp(fireRate, 0, WeaponDescriptor.FireRate);
+        }
     }
 
     // Start is called before the first frame update
@@ -25,16 +31,7 @@ public class MachineGun : WeaponBase
     }
 
     // Update is called once per frame
-    private void Update()
-    {
-        targetDist = Vector3.Distance(transform.position, target.position);
 
-        if(targetDist < 20 )
-        {
-            AimAtTarget();
-        }
-
-    }
 
 
 }

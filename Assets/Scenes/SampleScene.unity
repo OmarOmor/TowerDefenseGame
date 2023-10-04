@@ -759,6 +759,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5520138624959803097, guid: 8b4d9e4636c270c4ab975e0b8c8eaf36,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8031625772782338090, guid: 8b4d9e4636c270c4ab975e0b8c8eaf36,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -924,6 +929,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: MachineGunTower_Lvl2_Custom
       objectReference: {fileID: 0}
+    - target: {fileID: 1048612225750864, guid: 26596f9f0c93d364a94f1a318d4b2a64, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1236043131410496, guid: 26596f9f0c93d364a94f1a318d4b2a64, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453350654766316, guid: 26596f9f0c93d364a94f1a318d4b2a64, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608049957572860, guid: 26596f9f0c93d364a94f1a318d4b2a64, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788557851062624, guid: 26596f9f0c93d364a94f1a318d4b2a64, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800239179868154, guid: 26596f9f0c93d364a94f1a318d4b2a64, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803107632478244, guid: 26596f9f0c93d364a94f1a318d4b2a64, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927950571328186, guid: 26596f9f0c93d364a94f1a318d4b2a64, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4737672716932362, guid: 26596f9f0c93d364a94f1a318d4b2a64, type: 3}
       propertyPath: m_LocalPosition.x
       value: -35.996235
@@ -973,6 +1010,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1405131130}
+    - targetCorrespondingSourceObject: {fileID: 1048612225750864, guid: 26596f9f0c93d364a94f1a318d4b2a64,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1405131134}
+    - targetCorrespondingSourceObject: {fileID: 1048612225750864, guid: 26596f9f0c93d364a94f1a318d4b2a64,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1405131135}
   m_SourcePrefab: {fileID: 100100000, guid: 26596f9f0c93d364a94f1a318d4b2a64, type: 3}
 --- !u!1 &1405131128 stripped
 GameObject:
@@ -999,13 +1044,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponRotator: {fileID: 1405131129}
+  WeaponDescriptor: {fileID: 11400000, guid: 795e5784269aef94abd2c839b4ba19d5, type: 2}
   projectileSpawnPoints:
   - {fileID: 440071021}
   - {fileID: 1500319975}
   scanRadius: 20
-  target: {fileID: 1794412459}
   targetDist: 0
   <CurrentTarget>k__BackingField: {fileID: 0}
+--- !u!135 &1405131134
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405131128}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1405131135
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405131128}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1452634104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1144,12 +1237,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1794412459 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8031625772782338090, guid: 8b4d9e4636c270c4ab975e0b8c8eaf36,
-    type: 3}
-  m_PrefabInstance: {fileID: 1314373513}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1981884933
 PrefabInstance:
   m_ObjectHideFlags: 0
