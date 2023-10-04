@@ -7,20 +7,19 @@ using DG.Tweening;
 public class MachineGun : WeaponBase
 {
 
-    
+    float nextTimeToFire = 0;
+
+
     public override void FireProjectile()
     {
        if(CurrentTarget != null)
         {
-            if(fireRate >= WeaponDescriptor.FireRate)
+            if(Time.time >= nextTimeToFire)
             {
-                Debug.Log("Bang! bang!");
-                fireRate = 0;
+                nextTimeToFire = Time.time + 1f / WeaponDescriptor.FireRate;
+                Projectile projectile = Instantiate(WeaponDescriptor.ProjectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation) as Projectile;
+                projectile.ChaseTarget(CurrentTarget);
             }
-
-
-            fireRate += Time.deltaTime * WeaponDescriptor.FireRate;
-            fireRate = Mathf.Clamp(fireRate, 0, WeaponDescriptor.FireRate);
         }
     }
 

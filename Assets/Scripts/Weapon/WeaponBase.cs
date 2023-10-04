@@ -11,7 +11,7 @@ public abstract class WeaponBase : MonoBehaviour
     public WeaponDescriptor WeaponDescriptor;
 
     [SerializeField]
-    protected List<Transform> projectileSpawnPoints;
+    protected Transform projectileSpawnPoint;
 
     [SerializeField]
     protected float scanRadius = 5.0f;
@@ -23,6 +23,8 @@ public abstract class WeaponBase : MonoBehaviour
 
     [field: SerializeField]
     public Transform CurrentTarget { get; set; }
+
+
 
     private void Awake()
     {

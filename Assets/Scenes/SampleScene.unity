@@ -953,6 +953,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1800239179868154, guid: 26596f9f0c93d364a94f1a318d4b2a64, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1803107632478244, guid: 26596f9f0c93d364a94f1a318d4b2a64, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -1001,6 +1005,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198390180065484028, guid: 26596f9f0c93d364a94f1a318d4b2a64,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198390180065484028, guid: 26596f9f0c93d364a94f1a318d4b2a64,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.30566037
+      objectReference: {fileID: 0}
+    - target: {fileID: 198390180065484028, guid: 26596f9f0c93d364a94f1a318d4b2a64,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.6088902
+      objectReference: {fileID: 0}
+    - target: {fileID: 198390180065484028, guid: 26596f9f0c93d364a94f1a318d4b2a64,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1646902790714752, guid: 26596f9f0c93d364a94f1a318d4b2a64, type: 3}
@@ -1045,9 +1069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponRotator: {fileID: 1405131129}
   WeaponDescriptor: {fileID: 11400000, guid: 795e5784269aef94abd2c839b4ba19d5, type: 2}
-  projectileSpawnPoints:
-  - {fileID: 440071021}
-  - {fileID: 1500319975}
+  projectileSpawnPoint: {fileID: 440071021}
   scanRadius: 20
   targetDist: 0
   <CurrentTarget>k__BackingField: {fileID: 0}
@@ -1182,12 +1204,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b4d9e4636c270c4ab975e0b8c8eaf36, type: 3}
---- !u!4 &1500319975 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4195283445768172, guid: 26596f9f0c93d364a94f1a318d4b2a64,
-    type: 3}
-  m_PrefabInstance: {fileID: 1405131127}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1720993562
 GameObject:
   m_ObjectHideFlags: 0
