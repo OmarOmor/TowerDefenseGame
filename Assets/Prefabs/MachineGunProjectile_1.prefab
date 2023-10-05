@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4958104626598082}
   - component: {fileID: 7892227596301845310}
   - component: {fileID: 1321590425662444419}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: MachineGunProjectile_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjectileSpeed: 100
+  Damage: 20
 --- !u!1 &1622771751825052743
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,7 +81,7 @@ GameObject:
   - component: {fileID: 7660409169145801903}
   - component: {fileID: 2711258562775730042}
   - component: {fileID: 6614442795545302703}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2601587462093614440}
   - component: {fileID: 5876265844368044654}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
