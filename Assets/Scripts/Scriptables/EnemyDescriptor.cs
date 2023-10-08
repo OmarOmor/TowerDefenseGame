@@ -6,5 +6,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Enemy Descriptor",menuName = "Tower Defense/Enemy Descriptor")]
 public class EnemyDescriptor : ScriptableObject
 {
-    public int MaxHealth;
+    public float MaxHealth;
 }

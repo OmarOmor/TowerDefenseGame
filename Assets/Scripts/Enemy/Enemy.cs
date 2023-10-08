@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -10,7 +11,7 @@ public class Enemy : MonoBehaviour
     public EnemyDescriptor EnemyDescriptor;
 
     [SerializeField]
-    private int health;
+    private float health;
 
     public NavMeshAgent Agent;
     public Transform Destination;
@@ -22,7 +23,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        //health = EnemyDescriptor.MaxHealth;
+        health = EnemyDescriptor.MaxHealth;
     }
 
 
@@ -30,21 +31,25 @@ public class Enemy : MonoBehaviour
     {
         
         healthSlider.value = health;
+        Destination = GameObject.FindGameObjectWithTag("Destination").transform;
     }
 
     private void Update()
     {
         Agent.destination = Destination.position;
         healthSlider.value = health;
+
+
+     
     }
 
 
-    public void SetHealth(int health)
+    public void SetHealth(float health)
     {
         this.health -= health;
     }
 
-    public int GetHealth()
+    public float GetHealth()
     {
         return health;
     }

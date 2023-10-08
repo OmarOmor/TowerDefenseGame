@@ -12,7 +12,7 @@ public class WeaponSpawner : Pawn
     [field: SerializeField]
     public bool IsTaken { get; set; }
 
-    [SerializeField] GameObject WeaponObject;
+    
     public void Start()
     {
 
@@ -41,21 +41,26 @@ public class WeaponSpawner : Pawn
     private void OnMouseUp()
     {    
 
-        if(WeaponObject == null)
+        if(GameController.Instance.WeaponManager.CurrentSelectedWeapon == null)
         {
-            Debug.LogError("No weapon object assigned to " + gameObject.name);
+            //Debug.LogError("No weapon object assigned to " + gameObject.name);
             return;
-        }
-
-        if(!IsTaken)
+        }else
         {
-            seatMesh.transform.DOShakeScale(1f, 0.25f);
-            var weapon = Instantiate(WeaponObject);
-            Utils.SetCurrentTransform(weapon.transform, this.transform,false);
-            seatMesh.material.color = MouseEnterColor;
-            IsTaken = true;
+            if (!IsTaken)
+            {
+                seatMesh.transform.DOShakeScale(1f, 0.25f);
+                var weapon = Instantiate(GameController.Instance.WeaponManager.CurrentSelectedWeapon.gameObject);
+                Utils.SetCurrentTransform(weapon.transform, this.transform, false);
+                weapon.transform.DOShakeScale(1f, 0.25f);
+                seatMesh.material.color = MouseEnterColor;
+                IsTaken = true;
+
+            }
 
         }
+
+
 
     }
 }

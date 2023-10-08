@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
 
     SpawnPoint defaultSpawnPoint;
     
+    public WeaponManager WeaponManager;
 
     public static GameController Instance;
 
@@ -25,12 +26,15 @@ public class GameController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        WeaponManager = GetComponent<WeaponManager>();
     }
 
     private void Start()
     {
         SpawnPawn();
         SpawnHUD();
+
     }
 
 
@@ -68,6 +72,7 @@ public class GameController : MonoBehaviour
         {
             var hud = Instantiate(GameMode.DefaultHUD) as TD_HUD;
             hud.name = "Tower Defense HUD";
+            WeaponManager.WeaponUIPanel = hud.WeaponUIPanel;
             
 
         }

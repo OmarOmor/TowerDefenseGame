@@ -68,7 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjectileSpeed: 100
-  Damage: 20
+  Damage: 10
+  enemy: {fileID: 0}
 --- !u!1 &1622771751825052743
 GameObject:
   m_ObjectHideFlags: 0

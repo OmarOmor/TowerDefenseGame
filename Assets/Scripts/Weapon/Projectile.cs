@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     GameObject chaseTargetTransform;
     public float ProjectileSpeed = 20;
-    public int Damage = 20;
+    public float Damage = 20;
 
     public Enemy enemy;
 
@@ -19,6 +19,8 @@ public class Projectile : MonoBehaviour
             float dist = ProjectileSpeed * Time.deltaTime;
 
             transform.Translate(direction.normalized * dist,Space.World);
+
+            
 
         }
         else
@@ -41,7 +43,14 @@ public class Projectile : MonoBehaviour
             
             enemy = chaseTargetTransform.GetComponent<Enemy>();
             Debug.Log("Enemy hit!!");
-            enemy.SetHealth(Damage);
+            if(enemy.GetHealth() > 0)
+            {
+                enemy.SetHealth(Damage);
+            }else
+            {
+                Destroy(enemy.gameObject);
+            }
+            
             Destroy(gameObject);
         }
 
