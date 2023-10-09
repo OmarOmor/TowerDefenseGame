@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class WeaponManager : MonoBehaviour
 
     public WeaponBase CurrentSelectedWeapon;
 
+    public List<WeaponButton> WeaponBtnList;
+
 
 
     private void Awake()
@@ -21,7 +24,7 @@ public class WeaponManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -32,9 +35,16 @@ public class WeaponManager : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < WeaponList.Count; i++)
+        for(int i = 0; i < WeaponList.Count; i++)
         {
-            GameObject wpnBtn = Instantiate(TD_HUD.Instance.WeaponBtnPrefab, WeaponUIPanel.transform);
+            WeaponButton btn = Instantiate(TD_HUD.Instance.WeaponBtnPrefab.GetComponent<WeaponButton>(),WeaponUIPanel.transform);
+            WeaponBtnList.Add(btn);
+        }
+
+        for(int i  = 0; i < WeaponList.Count;i++)
+        {
+            WeaponBtnList[i].weaponIndex = i;
+            WeaponBtnList[i].GetComponent<Image>().sprite = WeaponList[i].WeaponUI_Icon;
         }
     }
 }

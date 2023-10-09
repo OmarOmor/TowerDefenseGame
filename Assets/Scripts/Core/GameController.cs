@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class GameController : MonoBehaviour
 
     public static GameController Instance;
 
+    public int Energy;
+
+    private int maxEnergy = 100;
+
+    public int health;
+    private int maxHealth = 100;
+
+    bool restartLevel = true;
 
     private void Awake()
     {
@@ -21,7 +30,7 @@ public class GameController : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+           // DontDestroyOnLoad(gameObject);
         }else
         {
             Destroy(gameObject);
@@ -32,9 +41,23 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         SpawnPawn();
         SpawnHUD();
+        Energy = maxEnergy;
+        health = maxHealth;
 
+    }
+
+
+    private void Update()
+    {
+        if(health <= 0 && restartLevel)
+        {
+            TD_HUD.Instance.GameOverPanel.SetActive(true); 
+            Time.timeScale = 0; // PAUSE the game
+            restartLevel = false;
+        }
     }
 
 
@@ -73,6 +96,7 @@ public class GameController : MonoBehaviour
             var hud = Instantiate(GameMode.DefaultHUD) as TD_HUD;
             hud.name = "Tower Defense HUD";
             WeaponManager.WeaponUIPanel = hud.WeaponUIPanel;
+
             
 
         }

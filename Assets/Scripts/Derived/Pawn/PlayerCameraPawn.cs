@@ -26,8 +26,8 @@ public class PlayerCameraPawn : Pawn
             cam.orthographicSize -=  scrollValue * zoomSpeed;
             cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, 14, 26);
 
-            var hInput = Input.GetAxis("Horizontal");
-            var vInput = Input.GetAxis("Vertical");
+            var hInput = -TD_HUD.Instance.TouchField.TouchDist.x;
+            var vInput = -TD_HUD.Instance.TouchField.TouchDist.y;
 
             Vector3 currentPos = transform.position;
             float xMovement = currentPos.x + hInput * movementSpeed * Time.deltaTime;

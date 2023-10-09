@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4192502493082661472}
   - component: {fileID: 3530486290550841896}
   m_Layer: 10
-  m_Name: MachineGunTower_Lvl2_Custom
+  m_Name: MachineGunTower_Lvl2_Var2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponRotator: {fileID: 4221898185616454}
-  WeaponDescriptor: {fileID: 11400000, guid: 795e5784269aef94abd2c839b4ba19d5, type: 2}
+  WeaponDescriptor: {fileID: 11400000, guid: de3403e7f53de2a4ca11a4fdf2c24f58, type: 2}
   projectileSpawnPoint: {fileID: 4575828760328406}
   scanRadius: 15
   targetDist: 0
@@ -253,7 +253,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ad5cc5335413e43df84ae6caa151caf6, type: 2}
+  - {fileID: 2100000, guid: 943340ab8dd3a324eaef4e17d36724a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5411,7 +5411,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ad5cc5335413e43df84ae6caa151caf6, type: 2}
+  - {fileID: 2100000, guid: 943340ab8dd3a324eaef4e17d36724a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

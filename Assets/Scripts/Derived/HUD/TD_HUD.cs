@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TD_HUD : HUD
 {
@@ -9,9 +10,20 @@ public class TD_HUD : HUD
     [field: SerializeField]
     public TextMeshProUGUI HealthText { get; private set; }
 
-    
+
+    [field: SerializeField]
+    public TextMeshProUGUI EnergyText { get; private set; }
+
+    [field: SerializeField]
+    public GameObject GameOverPanel { get; private set; }
+
+
+
     public GameObject WeaponUIPanel;
     public GameObject WeaponBtnPrefab;
+
+
+    public FixedTouchField TouchField;
 
     public static TD_HUD Instance;
 
@@ -21,7 +33,7 @@ public class TD_HUD : HUD
         if(Instance == null)
         {
             Instance    = this;
-            DontDestroyOnLoad(gameObject);
+           // DontDestroyOnLoad(gameObject);
         }else
         {
             Destroy(gameObject);
@@ -29,9 +41,13 @@ public class TD_HUD : HUD
     }
 
 
-    public void AddWeaponToInventory()
+   public void RestartLevel()
     {
-
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
-   // public TextMeshProUGUI EnergyText;
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

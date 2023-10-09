@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aab55a772e802a8428cb3e7874377337, type: 3}
-  m_Name: WD_MachineGunLvl2
+  m_Name: WD_MachineGunLvl2_var01
   m_EditorClassIdentifier: 
-  WeaponUI_Icon: {fileID: 21300000, guid: 57f3abb37abbadc4789c7b75e7b5ee89, type: 3}
+  WeaponUI_Icon: {fileID: 21300000, guid: a8be15f7051d7834aa2e64cfa9211915, type: 3}
   FireRate: 15
-  EnergyCost: 30
-  WeaponVisualPrefab: {fileID: 1048612225750864, guid: 26596f9f0c93d364a94f1a318d4b2a64,
+  EnergyCost: 50
+  WeaponVisualPrefab: {fileID: 1048612225750864, guid: 0b39c740e2cddc94f9b21c5afd46599d,
     type: 3}
-  ProjectilePrefab: {fileID: 1321590425662444419, guid: d4adf9c8934b64b29944074ece71bf10,
+  ProjectilePrefab: {fileID: 1321590425662444419, guid: ff13455577bd7274099376d3010130bf,
     type: 3}
   WeaponFireAudioClip: {fileID: 0}

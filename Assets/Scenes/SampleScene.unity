@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 58fd681da7b29774c8716e864ec0e0e5,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -366,6 +367,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameMode: {fileID: 11400000, guid: 4b9e23208c697f147999844c1ed9bbf6, type: 2}
   WeaponManager: {fileID: 0}
+  Energy: 0
+  health: 0
 --- !u!4 &136081666
 Transform:
   m_ObjectHideFlags: 0
@@ -395,10 +398,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponList:
   - {fileID: 11400000, guid: 795e5784269aef94abd2c839b4ba19d5, type: 2}
-  - {fileID: 11400000, guid: 795e5784269aef94abd2c839b4ba19d5, type: 2}
-  - {fileID: 11400000, guid: 795e5784269aef94abd2c839b4ba19d5, type: 2}
+  - {fileID: 11400000, guid: de3403e7f53de2a4ca11a4fdf2c24f58, type: 2}
   WeaponUIPanel: {fileID: 0}
   CurrentSelectedWeapon: {fileID: 0}
+  WeaponBtnList: []
 --- !u!114 &136081668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,11 +414,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a5f8ad4d54d7e42acc87109aef207a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThresholdTime: 5
+  WaveThresholdTime: 0
+  WaveMaxThresholdTime: 5
   resetTime: 0
   EnemySpawnTransform: {fileID: 1022192458}
   enemyPrefab: {fileID: 8033342933223746120, guid: 5f1f00470b1730d45bdc8349baf535e1,
     type: 3}
+  MAX_LEVELS: 100
+  waveNumber: 0
 --- !u!1001 &251102141
 PrefabInstance:
   m_ObjectHideFlags: 0

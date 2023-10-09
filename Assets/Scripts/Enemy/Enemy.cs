@@ -19,6 +19,10 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     Slider healthSlider;
+
+
+    [SerializeField]
+    float deltaDistance;
     
 
     private void Awake()
@@ -38,8 +42,14 @@ public class Enemy : MonoBehaviour
     {
         Agent.destination = Destination.position;
         healthSlider.value = health;
+        deltaDistance = Vector3.Distance(transform.position, Destination.position);
+        if (deltaDistance <= (Agent.stoppingDistance + 0.5))
+        {
+            GameController.Instance.health -= 30;
+            TD_HUD.Instance.HealthText.text = GameController.Instance.health.ToString();
+            Destroy(gameObject);
 
-
+        }
      
     }
 

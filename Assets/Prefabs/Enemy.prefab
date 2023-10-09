@@ -646,10 +646,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyDescriptor: {fileID: 11400000, guid: ac962ad2538cc9b4fa83370e3b51f678, type: 2}
-  health: 100
+  health: 250
   Agent: {fileID: 8313146007889936247}
   Destination: {fileID: 0}
   healthSlider: {fileID: 5551933465261928652}
+  deltaDistance: 0
 --- !u!195 &8313146007889936247
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -660,10 +661,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.58
-  m_Speed: 10
-  m_Acceleration: 150
+  m_Speed: 30
+  m_Acceleration: 300
   avoidancePriority: 50
-  m_AngularSpeed: 2000
+  m_AngularSpeed: 16000
   m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1

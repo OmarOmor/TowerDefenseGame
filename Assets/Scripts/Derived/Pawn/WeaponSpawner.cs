@@ -51,6 +51,8 @@ public class WeaponSpawner : Pawn
             {
                 seatMesh.transform.DOShakeScale(1f, 0.25f);
                 var weapon = Instantiate(GameController.Instance.WeaponManager.CurrentSelectedWeapon.gameObject);
+                GameController.Instance.Energy -= GameController.Instance.WeaponManager.CurrentSelectedWeapon.WeaponDescriptor.EnergyCost;
+                TD_HUD.Instance.EnergyText.text = GameController.Instance.Energy.ToString();
                 Utils.SetCurrentTransform(weapon.transform, this.transform, false);
                 weapon.transform.DOShakeScale(1f, 0.25f);
                 seatMesh.material.color = MouseEnterColor;

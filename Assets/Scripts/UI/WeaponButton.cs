@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class WeaponButton : MonoBehaviour
 {
-    Button weaponSelectionBtn;
-    [SerializeField]
-    int weaponIndex;
+    
+    public Button weaponSelectionBtn;
+    
+    public int weaponIndex;
 
     private void Start()
     {

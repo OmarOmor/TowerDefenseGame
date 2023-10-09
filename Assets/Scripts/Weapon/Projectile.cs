@@ -48,6 +48,8 @@ public class Projectile : MonoBehaviour
                 enemy.SetHealth(Damage);
             }else
             {
+                GameController.Instance.Energy += 40;
+                TD_HUD.Instance.EnergyText.text = GameController.Instance.Energy.ToString();
                 Destroy(enemy.gameObject);
             }
             

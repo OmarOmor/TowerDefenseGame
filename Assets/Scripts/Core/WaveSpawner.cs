@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public float ThresholdTime;
+    public float WaveThresholdTime;
+    public float WaveMaxThresholdTime = 5;
     public bool resetTime;
     public Transform EnemySpawnTransform;
 
     public GameObject enemyPrefab;
+
+    public int MAX_LEVELS = 100;
+
+    public int waveNumber = 0;
+
 
     
     // Start is called before the first frame update
@@ -21,12 +27,12 @@ public class WaveSpawner : MonoBehaviour
     void Update()
     {
         SpawnEnemies();
-        ThresholdTime -= Time.deltaTime;
-        ThresholdTime = Mathf.Clamp(ThresholdTime, 0.0f, 5.0f);
+        WaveThresholdTime -= Time.deltaTime;
+        WaveThresholdTime = Mathf.Clamp(WaveThresholdTime, 0.0f, 5.0f);
 
         if(resetTime)
         {
-            ThresholdTime = 5;
+            WaveThresholdTime = WaveMaxThresholdTime;
             resetTime = false;
         }
     }
@@ -34,14 +40,35 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemies()
     {
-        if(ThresholdTime <= 0.0f) 
+        if(WaveThresholdTime <= 0.0f) 
         {
             Debug.Log("Enemy Spawned!");
-            GameObject enemy = Instantiate(enemyPrefab);
-            Utils.SetCurrentTransform(enemyPrefab.transform, enemy.transform);
+            
+            StartCoroutine(SpawnWave());
+            
+            
             resetTime = true;
         }
-
-
     }
+
+
+    IEnumerator SpawnWave()
+    {
+        waveNumber++;
+        for(int i = 0; i < waveNumber;i++)
+        {
+            SpawnEnemy();
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        
+    }
+
+    void SpawnEnemy()
+    {
+        GameObject enemy = Instantiate(enemyPrefab,EnemySpawnTransform.position,EnemySpawnTransform.rotation);
+    }
+
+
+    
 }

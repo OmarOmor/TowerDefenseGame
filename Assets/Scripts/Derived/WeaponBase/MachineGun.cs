@@ -14,9 +14,11 @@ public class MachineGun : WeaponBase
 
     public override void FireProjectile()
     {
-       if(CurrentTarget != null)
+        
+        if (CurrentTarget != null)
         {
-            if(Time.time >= nextTimeToFire)
+            
+            if (Time.time >= nextTimeToFire)
             {
                 nextTimeToFire = Time.time + 1f / WeaponDescriptor.FireRate;
                 FireParticle.Play();

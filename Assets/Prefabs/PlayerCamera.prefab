@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ReceiveInput>k__BackingField: 1
   zoomSpeed: 10
-  movementSpeed: 30
+  movementSpeed: 10
   cameraMovementLimitX: {x: -11.27, y: 11.27}
   cameraMovementLimitY: {x: 28.34, y: 86.3}
 --- !u!114 &8072768349623887562
