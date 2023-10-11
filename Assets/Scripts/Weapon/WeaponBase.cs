@@ -1,9 +1,7 @@
-using OpenCover.Framework.Model;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Compilation;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
+
 
 public abstract class WeaponBase : MonoBehaviour
 {
