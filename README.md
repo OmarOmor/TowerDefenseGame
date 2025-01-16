@@ -1,2 +1,2 @@
 # TowerDefenseGame
- A tower defense game for studying Unity
+ A tower defense game for a Job interview
