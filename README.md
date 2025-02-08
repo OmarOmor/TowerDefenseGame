@@ -1,2 +1,2 @@
 # TowerDefenseGame
- A tower defense game for a Job interview
+ A tower defense game
